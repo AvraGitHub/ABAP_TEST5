@@ -12,7 +12,7 @@ REPORT  YRS_CLASS_DOWNLOAD.
 * Author: Sergey Korolev (slkorolev@mail.ru)
 * Does not work with interfaces and exception classes
 ********************************************************************
-
+* Test same author new line
 
 TABLES: t002.
 
