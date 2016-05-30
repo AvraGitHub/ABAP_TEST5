@@ -5,7 +5,7 @@
 *&
 *&
 *&---------------------------------------------------------------------*
-
+*TEST DTEL NAME
 REPORT  ZTESTERCHARLIE.
 
 write 'hi charle'.
