@@ -3,3 +3,4 @@ T8J0F                           Billing method Posting Rule                     
 T8J0F                           Billing method Posting Rule                                   800PM02PM02CUTBCBCB                   Cutback - Recovery
 T8J0F                           Billing method Posting Rule                                   800PM02PM02CUTICBCB                   Cutback - Intercompany
 T8J0F                           Billing method Posting Rule                                   800TR014700NBIL                       Non-operated Billing
+T8J0F                           Billing method Posting Rule                                   800TR014700NBIL                       Non-operated Billing
