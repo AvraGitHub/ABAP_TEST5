@@ -8,3 +8,4 @@ T8J0G                           Billing Method Posting Rule Detail              
 T8J0G                           Billing Method Posting Rule Detail                            800PM02PM02CUTBCDAD0A007 CB1A007   PM02 Posting Method                Cutback - Recovery                 Expenditure - Direct Charge
 T8J0G                           Billing Method Posting Rule Detail                            800PM02PM02CUTBCDBN0A007 CB1A007 CBPM02 Posting Method                Cutback - Recovery                 Expenditure - Direct Charge
 T8J0G                           Billing Method Posting Rule Detail                            800PM02PM02CUTBCDBR0A007 CB1A007 CBPM02 Posting Method                Cutback - Recovery                 Expenditure - Direct Charge
+T8J0G                           Billing Method Posting Rule Detail                            800PM02PM02CUTBCUAD0A0   CB1A0   CBPM02 Posting Method                Cutback - Recovery                 Customer
