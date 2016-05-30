@@ -5,7 +5,7 @@
 *&
 *&
 *&---------------------------------------------------------------------*
-
+*TEST DTEL NAME
 REPORT  ZTESTZURIICH.
 
 WRITE: 'USER NAME IS?'.
