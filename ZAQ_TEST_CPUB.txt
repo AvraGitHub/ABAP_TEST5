@@ -2,7 +2,7 @@ class ZAQ_TEST definition
   public
   final
   create public .
-
+*TEST DTEL NAME
 public section.
 
   class-data TEST type CHAR1 value 'X'. "#EC NOTEXT .
