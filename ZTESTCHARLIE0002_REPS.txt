@@ -6,7 +6,7 @@ START: ZTESTCHARLIE                                                             
 *&
 *&
 *&---------------------------------------------------------------------*
-
+*TEST DTEL NAME
 REPORT  ZTESTCHARLIE.
 write: 'hello world'.
 write: 'goodbye'.
