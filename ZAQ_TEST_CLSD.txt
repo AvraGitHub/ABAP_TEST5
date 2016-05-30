@@ -1,6 +1,6 @@
 class-pool .
 *"* class pool for class ZAQ_TEST
-
+*TEST DTEL NAME
 *"* local type definitions
 include ZAQ_TEST======================ccdef.
 
