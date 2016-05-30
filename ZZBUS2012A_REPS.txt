@@ -1,4 +1,5 @@
 *****           Implementation of object type ZZBUS2012A           *****
+*TEST DTEL NAME
 INCLUDE <OBJECT>.
 BEGIN_DATA OBJECT. " Do not change.. DATA is generated
 * only private members may be inserted into structure private
