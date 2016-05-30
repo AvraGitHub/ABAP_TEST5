@@ -1,3 +1,4 @@
 T8J0G                           Billing Method Posting Rule Detail                            800PM02PM02CCOPAB  0A701 NN1A7   NNPM02 Posting Method                Cash Call Transaction - Operated   Cash call billed to partner
 T8J0G                           Billing Method Posting Rule Detail                            800PM02PM02CCOPAC  0A824   1A824   PM02 Posting Method                Cash Call Transaction - Operated   Cash call offset
 T8J0G                           Billing Method Posting Rule Detail                            800TR014700NBILVE                  4700 Posting Method                Non-operated Billing               Vendor
+T8J0G                           Billing Method Posting Rule Detail                            800TR014700NBILVE                  4700 Posting Method                Non-operated Billing               Vendor
