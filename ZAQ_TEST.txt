@@ -1,3 +1,5 @@
-method CONSTRUCTOR.
-"me->x = '2'.
+*TEST DTEL NAME
+
+method HELLOWORLD.
+  WRITE: 'Hello world'.
 endmethod.
