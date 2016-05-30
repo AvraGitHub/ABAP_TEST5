@@ -5,7 +5,7 @@
 *&
 *&
 *&---------------------------------------------------------------------*
-
+*TEST DTEL NAME
 REPORT zanna.
 data: lt_ZAQCUSTOMING_LOG type TABLE OF ZAQCUSTOMING_LOG.
 data: ls_ZAQCUSTOMING_LOG type ZAQCUSTOMING_LOG.
