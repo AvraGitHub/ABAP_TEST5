@@ -24,3 +24,4 @@ T8J0G                           Billing Method Posting Rule Detail              
 T8J0G                           Billing Method Posting Rule Detail                            800TR014700NBILVE                  4700 Posting Method                Non-operated Billing               Vendor
 T8J0G                           Billing Method Posting Rule Detail                            800TR014700NBILVE                  4700 Posting Method                Non-operated Billing               Vendor
 T8J0G                           Billing Method Posting Rule Detail                            800TR014700NBILVE                  4700 Posting Method                Non-operated Billing               Vendor
+T8J0G                           Billing Method Posting Rule Detail                            800TR014700NBILVE                  4700 Posting Method                Non-operated Billing               Vendor
