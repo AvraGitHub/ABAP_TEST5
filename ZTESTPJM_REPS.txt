@@ -5,6 +5,6 @@
 *&
 *&
 *&---------------------------------------------------------------------*
-
+*TEST DTEL NAME
 REPORT  ZTESTPJM.
 write: 'does the appending work??'.
