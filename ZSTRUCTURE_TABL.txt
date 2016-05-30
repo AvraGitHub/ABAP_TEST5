@@ -1,1 +1,2 @@
+*TEST DTEL NAME
 FIELDNAME:UNAME                           DATA ELEMENT:UNAME                           DATA TYPE:CHAR  DOMAIN:UNAME
