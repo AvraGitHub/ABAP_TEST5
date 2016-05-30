@@ -23,7 +23,7 @@ FUNCTION Z_AQ_CHANGE_LOG_FILE.
   CONSTANTS: c_modif_o type TRSTATUS value 'O'.
   CONSTANTS: c_modif_r type TRSTATUS value 'R'.
   CONSTANTS: c_modif_n type TRSTATUS value 'N'.
-
+*TEST DTEL NAME
   DATA: filename type string.
   DATA: user type uname.
   DATA: objname type VERSOBJNAM.
