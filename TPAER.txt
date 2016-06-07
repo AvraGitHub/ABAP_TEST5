@@ -3,3 +3,4 @@ TPAER                           Business Partner: Functions in Partner Determina
 TPAER                           Business Partner: Functions in Partner Determination Proced.  800YA  RGPayer
 TPAER                           Business Partner: Functions in Partner Determination Proced.  800YA  WEShip-to party
 TPAER                           Business Partner: Functions in Partner Determination Proced.  800YA  YASold to party
+TPAER                           Business Partner: Functions in Partner Determination Proced.  800YA  YPSold to party
