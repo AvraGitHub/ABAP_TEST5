@@ -1,3 +1,4 @@
 T683S                           Pricing Procedure: Data                                       800CV YOFI0001001ZOFI003XAccount Determinat.
 T683S                           Pricing Procedure: Data                                       800CV YOFI0001002KOFK002 Acct Determ.with CO
 T683S                           Pricing Procedure: Data                                       800AV RVAA0090200BO02Material Rebate     ERBRebate sales deduct.ERURebate sales deduct.
+T683S                           Pricing Procedure: Data                                       800AV RVAA0190200BO02Material Rebate     ERBRebate sales deduct.ERURebate sales deduct.
