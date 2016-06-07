@@ -1,3 +1,4 @@
 T685                            Conditions: Types                                             800CV OIH1OIH1  Acct Determ.with OIL
 T685                            Conditions: Types                                             800CV ZX13ZX13  Account Determinat.
 T685                            Conditions: Types                                             800CV ZOFIYOFI  Account Determinat.
+T685                            Conditions: Types                                             800CV YOFI00Account Determination
