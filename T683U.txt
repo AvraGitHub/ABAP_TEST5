@@ -27,3 +27,4 @@ T683U                           Conditions: Procedure (Text)                    
 T683U                           Conditions: Procedure (Text)                                  800AV RVAA0190100BO01Group Rebate        ERBRebate sales deduct.ERURebate sales deduct.
 T683U                           Conditions: Procedure (Text)                                  800AV RVAA0190100BO01Group Rebate        ERBRebate sales deduct.ERURebate sales deduct.
 T683U                           Conditions: Procedure (Text)                                  800AV RVAA0190100BO01Group Rebate        ERBRebate sales deduct.ERURebate sales deduct.
+T683U                           Conditions: Procedure (Text)                                  800AV RVAA0190100BO01Group Rebate        ERBRebate sales deduct.ERURebate sales deduct.
