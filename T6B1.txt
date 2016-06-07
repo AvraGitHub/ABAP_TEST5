@@ -2,3 +2,4 @@ T6B1                            Rebate : Rebate Agreement Types                 
 T6B1                            Rebate : Rebate Agreement Types                               8000031Promotion-copy      V Sales/Distribution  B21PI01
 T6B1                            Rebate : Rebate Agreement Types                               80011111111                V Sales/Distribution  C  AG01ZMYDXA
 T6B1                            Rebate : Rebate Agreement Types                               80011111111                V Sales/Distribution  C  AG01ZMYDXA
+T6B1                            Rebate : Rebate Agreement Types                               80011111111                ZMYDV
