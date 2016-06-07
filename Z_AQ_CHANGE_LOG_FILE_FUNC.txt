@@ -23,7 +23,7 @@ FUNCTION Z_AQ_CHANGE_LOG_FILE.
   CONSTANTS: c_modif_o type TRSTATUS value 'O'.
   CONSTANTS: c_modif_r type TRSTATUS value 'R'.
   CONSTANTS: c_modif_n type TRSTATUS value 'N'.
-*TEST DTEL NAME
+
   DATA: filename type string.
   DATA: user type uname.
   DATA: objname type VERSOBJNAM.
@@ -293,16 +293,16 @@ FUNCTION Z_AQ_CHANGE_LOG_FILE.
             if s_dd02v-as4date ge datefrom.
 *              write: / 'Table'.
 *              write: / s_dd02tv-tabname, s_dd02tv-ddtext.
-               CLEAR ls_table.
-               APPEND ls_table to lt_table.
-               CONCATENATE 'START: ' objname '_'  s_e071_workbench-object ' AUTHOR:' user '  EMAIL:PMOLINEUX@HOTMAIL.COM' INTO ls_table.
+              CLEAR ls_table.
+              APPEND ls_table to lt_table.
+              CONCATENATE 'START: ' objname '_'  s_e071_workbench-object ' AUTHOR:' user '  EMAIL:PMOLINEUX@HOTMAIL.COM' INTO ls_table.
 
-               APPEND ls_table to lt_table.
+              APPEND ls_table to lt_table.
               LOOP at t_dd03v INTO s_dd03v.
 *                write: /, space, s_dd03v-fieldname.
-                 CLEAR ls_table.
-                 CONCATENATE 'FIELDNAME:' s_dd03v-fieldname '  DATA ELEMENT:' s_dd03v-rollname '  DATA TYPE:' s_dd03v-datatype '  DOMAIN:' s_dd03v-domname INTO ls_table respecting blanks.
-                 APPENd ls_table to lt_table.
+                CLEAR ls_table.
+                CONCATENATE 'FIELDNAME:' s_dd03v-fieldname '  DATA ELEMENT:' s_dd03v-rollname '  DATA TYPE:' s_dd03v-datatype '  DOMAIN:' s_dd03v-domname INTO ls_table respecting blanks.
+                APPENd ls_table to lt_table.
               endloop.
               CLEAR ls_table.
               CONCATENATE 'FINISH:' s_dd02tv-tabname INTO ls_table.
@@ -619,43 +619,43 @@ FUNCTION Z_AQ_CHANGE_LOG_FILE.
 
 *append t_abaptxt22_tab with
 *Data Element information
-              loop at ls_work_user-lt_dd04v INTO s_dd04v.
-                clear s_abaptxt255.
-                move s_dd04v(255) to s_abaptxt255.
-                APPEND s_abaptxt255 to ls_work_user-lt_abap.
-              ENDLOOP.
+    loop at ls_work_user-lt_dd04v INTO s_dd04v.
+      clear s_abaptxt255.
+      move s_dd04v(255) to s_abaptxt255.
+      APPEND s_abaptxt255 to ls_work_user-lt_abap.
+    ENDLOOP.
 
 *append t_abaptxt22_tab with
 *Table information
-              APPEND LINES OF lt_table to  ls_work_user-lt_abap.
+    APPEND LINES OF lt_table to  ls_work_user-lt_abap.
 
 
 *begin: write the program to the file
-              move 'C:\Users\EDLUNDA\Documents\SAP Programs\ABAP.txt' to filename.
-              CALL METHOD cl_gui_frontend_services=>gui_download
-                 EXPORTING
-                  filename = filename
-*                  confirm_overwrite = 'X'
-*                  no_auth_check = 'X'
-                 CHANGING
-                  data_tab = ls_work_user-lt_abap
-                 EXCEPTIONS
-                  OTHERS   = 1.
+    move 'C:\Users\EDLUNDA\Documents\SAP Programs\ABAP.txt' to filename.
+    CALL METHOD cl_gui_frontend_services=>gui_download
+      EXPORTING
+        filename          = filename
+*       confirm_overwrite = 'X'
+*       no_auth_check     = 'X'
+      CHANGING
+        data_tab          = ls_work_user-lt_abap
+      EXCEPTIONS
+        OTHERS            = 1.
 *end: write the program to the file
 *begin: write the program to the file
-              move 'C:\Users\EDLUNDA\Documents\SAP Tables\TABLES.txt' to filename.
+    move 'C:\Users\EDLUNDA\Documents\SAP Tables\TABLES.txt' to filename.
 *ADD ABAP ALSO TO THE TABLES FILE SO THERE IS JUST ONE FILE
-              append LINES OF ls_work_user-lt_abap to lt_table.
+    append LINES OF ls_work_user-lt_abap to lt_table.
 
-              CALL METHOD cl_gui_frontend_services=>gui_download
-                 EXPORTING
-                  filename = filename
-*                  confirm_overwrite = 'X'
-*                  no_auth_check = 'X'
-                 CHANGING
-                  data_tab = lt_table
-                 EXCEPTIONS
-                  OTHERS   = 1.
+    CALL METHOD cl_gui_frontend_services=>gui_download
+      EXPORTING
+        filename          = filename
+*       confirm_overwrite = 'X'
+*       no_auth_check     = 'X'
+      CHANGING
+        data_tab          = lt_table
+      EXCEPTIONS
+        OTHERS            = 1.
 *end: write the program to the file
 
 *********************************************************
@@ -686,7 +686,7 @@ FUNCTION Z_AQ_CHANGE_LOG_FILE.
       select  * from e071k into table t_e071k_custom
   where trkorr = s_e070-trkorr.
       loop at t_e071k_custom into s_e071k_custom.
-         CHECK s_e071k_custom-viewname is not initial.
+        CHECK s_e071k_custom-viewname is not initial.
 *        write:/ s_e071k_custom-mastername,  s_e071k_custom-tabkey.
         gv_key_length = strlen( s_e071k_custom-tabkey ).
         TRY .
@@ -698,11 +698,15 @@ FUNCTION Z_AQ_CHANGE_LOG_FILE.
         gt_tab_fields = go_strucdescr->get_ddic_field_list( ).
         clear gt_where[].
         clear gv_offset.
+        clear lt_dba_sellist[].
+
 
         LOOP AT gt_tab_fields ASSIGNING <gwa_tab_field> WHERE keyflag = 'X'.
 *          WRITE: / <gwa_tab_field>-fieldname.
-          CONCATENATE '''' <gwa_tab_field>-fieldname '''' INTO ls_dba_sellist-viewfield.
-          ls_DBA_SELLIST-OPERATOR = 'EQ'.
+*         CONCATENATE '''' <gwa_tab_field>-fieldname '''' INTO ls_dba_sellist-viewfield.
+          clear ls_dba_sellist.
+          ls_dba_sellist-viewfield = <gwa_tab_field>-fieldname.
+          ls_DBA_SELLIST-OPERATOR  = 'EQ'.
 
           "fill up where condition
           if sy-tabix = 1.
@@ -714,13 +718,16 @@ FUNCTION Z_AQ_CHANGE_LOG_FILE.
 *            CONCATENATE <gwa_tab_field>-fieldname '='  '''' s_e071k_custom-tabkey+gv_offset(<gwa_tab_field>-leng) '''' into gs_where.
 *            CONCATENATE 'AND ' gs_where into gs_where RESPECTING BLANKS.
             CONCATENATE '''' s_e071k_custom-tabkey+gv_offset(<gwa_tab_field>-leng) '''' into gs_where.
-            ls_dba_sellist-value = gs_where.
+            ls_dba_sellist-value = s_e071k_custom-tabkey+gv_offset(<gwa_tab_field>-leng).
             CONCATENATE <gwa_tab_field>-fieldname  ' = ' gs_where into gs_where RESPECTING BLANKS.
             CONCATENATE 'AND ' gs_where into gs_where RESPECTING BLANKS.
+            ls_dba_sellist-tabix = sy-tabix.
+            ls_dba_sellist-and_or = 'AND'.
+            append ls_dba_sellist to lt_dba_sellist. "not tabix = 1 which is mandt and not required
           ENDIF.
           add <gwa_tab_field>-leng to gv_offset.
           append gs_where to gt_where.
-          append ls_dba_sellist to lt_dba_sellist.
+
         ENDLOOP.
 *Do dynamic select on the configuration key
         data:     dref        TYPE REF TO data,
@@ -745,7 +752,7 @@ FUNCTION Z_AQ_CHANGE_LOG_FILE.
           EXPORTING
             VIEW_NAME              = s_e071k_custom-viewname
           TABLES
-*           DBA_SELLIST            = lt_dba_sellist ""NOTE THIS IS NOT WORKING
+            DBA_SELLIST            = lt_dba_sellist
             DATA                   = lt_view_data
           EXCEPTIONS
             NO_VIEWMAINT_TOOL      = 1
@@ -773,20 +780,20 @@ FUNCTION Z_AQ_CHANGE_LOG_FILE.
 
 * begin insertion to send customising to GITHUB
 
-       tr_objname = s_e071k_custom-objname.
-       select SINGLE ddtext from dd02t INTO as4text
-         where tabname = tr_objname
-         and   ddlanguage = 'EN'.
+        tr_objname = s_e071k_custom-objname.
+        select SINGLE ddtext from dd02t INTO as4text
+          where tabname = tr_objname
+          and   ddlanguage = 'EN'.
 
-       clear s_config-values.
+        clear s_config-values.
 *add object and email address
-       CONCATENATE 'OBJECT:' tr_objname ' ' 'EMAIL:PMOLINEUX@HOTMAIL.COM' INTO s_config-values RESPECTING BLANKS.
-       APPEND s_config to t_config.
-       APPEND s_config-values to t_config_fileout.
-       CLEAR s_config-values.
-       CONCATENATE tr_objname '  ' as4text '  ' ls_view_data INTO s_config-values RESPECTING BLANKS.
-       APPEND s_config to t_config.
-       APPEND s_config-values to t_config_fileout.
+        CONCATENATE 'OBJECT:' tr_objname ' ' 'EMAIL:PMOLINEUX@HOTMAIL.COM' INTO s_config-values RESPECTING BLANKS.
+        APPEND s_config to t_config.
+        APPEND s_config-values to t_config_fileout.
+        CLEAR s_config-values.
+        CONCATENATE tr_objname '  ' as4text '  ' ls_view_data INTO s_config-values RESPECTING BLANKS.
+        APPEND s_config to t_config.
+        APPEND s_config-values to t_config_fileout.
 *       if gv_key_found = 'X'.
 *         append s_config to t_config.
 *         exit. "The key to the customising transport is found
@@ -798,19 +805,19 @@ FUNCTION Z_AQ_CHANGE_LOG_FILE.
     append LINES OF t_config to ls_work_user-lt_config.
 
 *begin: write the config file
-              move 'C:\Users\EDLUNDA\Documents\SAP Config\CONFIG.txt' to filename.
+    move 'C:\Users\EDLUNDA\Documents\SAP Config\CONFIG.txt' to filename.
 **ADD ABAP ALSO TO THE TABLES FILE SO THERE IS JUST ONE FILE
 *              append LINES OF ls_work_user-lt_abap to lt_table.
 
-              CALL METHOD cl_gui_frontend_services=>gui_download
-                 EXPORTING
-                  filename = filename
-*                  confirm_overwrite = 'X'
-*                  no_auth_check = 'X'
-                 CHANGING
-                  data_tab = t_config_fileout
-                 EXCEPTIONS
-                  OTHERS   = 1.
+    CALL METHOD cl_gui_frontend_services=>gui_download
+      EXPORTING
+        filename          = filename
+*       confirm_overwrite = 'X'
+*       no_auth_check     = 'X'
+      CHANGING
+        data_tab          = t_config_fileout
+      EXCEPTIONS
+        OTHERS            = 1.
 *end write config to file
 
 *********UPDATE THE USER TABLE WITH WB AND CONGIF
