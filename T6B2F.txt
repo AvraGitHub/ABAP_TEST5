@@ -2,3 +2,4 @@ T6B2F                           Rebate : Permitted Condition Types/Tables per Gr
 T6B2F                           Rebate : Permitted Condition Types/Tables per Group           800V ZMYD02Sales/Distribution  My Deals            K007007
 T6B2F                           Rebate : Permitted Condition Types/Tables per Group           800V ZMYD03Sales/Distribution  My Deals            KA00005
 T6B2F                           Rebate : Permitted Condition Types/Tables per Group           800V ZMYD03Sales/Distribution  My Deals            KA00005
+T6B2F                           Rebate : Permitted Condition Types/Tables per Group           800V ZMYD03Sales/Distribution  My Deals            KA00005
