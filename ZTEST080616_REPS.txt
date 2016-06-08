@@ -10,3 +10,4 @@ REPORT  ZTEST080616.
 
 *this is a program for charlie
 write 'hello charlie'.
+write 'hello Peter'.
