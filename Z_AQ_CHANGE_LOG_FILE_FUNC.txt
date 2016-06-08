@@ -15,9 +15,6 @@ FUNCTION Z_AQ_CHANGE_LOG_FILE.
 *"----------------------------------------------------------------------
   TYPE-POOLS: abap.
 *change V2 test
-*test 3
-*test 4
-*test 5
 *Constants
   CONSTANTS: c_task_wb type TRFUNCTION value 'S'.
   CONSTANTS: c_task_cust type TRFUNCTION value 'Q'.
@@ -679,6 +676,7 @@ FUNCTION Z_AQ_CHANGE_LOG_FILE.
 
     FIELD-SYMBOLS: <gwa_tab_field> TYPE dfies.
     loop at t_e070_open into s_e070 where as4user     = user
+                                AND       as4date    ge datefrom
                                 AND   trfunction  = c_task_cust."Customsing only
       clear gv_key_found. "This is used to indicate the view key was found in the customising tport
       at first.
