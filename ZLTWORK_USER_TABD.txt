@@ -1,4 +1,3 @@
-*TEST DTEL NAME
 FIELDNAME:UNAME                           DATA ELEMENT:UNAME                           DATA TYPE:CHAR  DOMAIN:UNAME
 FIELDNAME:LT_ABAP                         DATA ELEMENT:ABAPTXT255_TAB                  DATA TYPE:TTYP  DOMAIN:
 FIELDNAME:LT_TRDIR                        DATA ELEMENT:TRDIR_IT                        DATA TYPE:TTYP  DOMAIN:
