@@ -40,6 +40,7 @@ FUNCTION Z_AQ_CHANGE_LOG_FILE.
   DATA: s_dd02v type dd02v.
   DATA: t_config type ztt_config.
   DATA: s_config TYPE zlt_config.
+  DATA: s_config1 type zlt_config.
   DATA: t_config_fileout TYPE TABLE OF CHAR2048.
   data: s_dd03v type dd03v.
   data: s_dd02tv type dd02tv.
@@ -788,13 +789,15 @@ FUNCTION Z_AQ_CHANGE_LOG_FILE.
 
         clear s_config-values.
 *add object and email address
-        CONCATENATE 'OBJECT:' tr_objname ' ' 'EMAIL:PMOLINEUX@HOTMAIL.COM' INTO s_config-values RESPECTING BLANKS.
-        APPEND s_config to t_config.
-        APPEND s_config-values to t_config_fileout.
+*       CONCATENATE 'OBJECT:' tr_objname ' ' 'EMAIL:PMOLINEUX@HOTMAIL.COM' INTO s_config-values RESPECTING BLANKS.
+        s_config-OBJECTNAME = tr_objname.
+        s_config-UNAME = user.
+*        APPEND s_config to t_config.
+*        APPEND s_config-values to t_config_fileout.
         CLEAR s_config-values.
         CONCATENATE tr_objname '  ' as4text '  ' ls_view_data INTO s_config-values RESPECTING BLANKS.
         APPEND s_config to t_config.
-        APPEND s_config-values to t_config_fileout.
+*        APPEND s_config-values to t_config_fileout.
 *       if gv_key_found = 'X'.
 *         append s_config to t_config.
 *         exit. "The key to the customising transport is found
@@ -802,8 +805,31 @@ FUNCTION Z_AQ_CHANGE_LOG_FILE.
 * end of insertion to GITHUB
 
       endloop. "All the customising tables belonging to a tr
+
+
+
+
+
     endloop. "all customissing transports for the user
+
+    SORT t_config by uname objectname.
+*   SORT t_config by objectname.
+.
+
+    loop at t_config INTO s_config.
+      at new objectname.
+        CLEAR s_config1.
+        s_config1-objectname = s_config-objectname.
+        CONCATENATE 'OBJECT:' s_config-objectname ' ' 'EMAIL:PMOLINEUX@HOTMAIL.COM' INTO s_config1-values RESPECTING BLANKS.
+        INSERT s_config1 INTO t_config INDEX sy-tabix .
+      ENDAT.
+    endloop.
+
+    LOOP at t_config INTO  s_config.
+      APPEND s_config-values to t_config_fileout.
+    endloop.
     append LINES OF t_config to ls_work_user-lt_config.
+
 
 *begin: write the config file
     move 'C:\Users\EDLUNDA\Documents\SAP Config\CONFIG.txt' to filename.
