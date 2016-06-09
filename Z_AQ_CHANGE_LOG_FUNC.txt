@@ -13,7 +13,6 @@ FUNCTION Z_AQ_CHANGE_LOG.
 *"     REFERENCE(T_SMODILOGTB) TYPE  SMODILOGTB OPTIONAL
 *"     REFERENCE(T_TEXTPOOL) TYPE  TEXTPOOL_TABLE OPTIONAL
 *"----------------------------------------------------------------------
-*TEST DTEL NAME
   TYPE-POOLS: abap.
 *Constants
   CONSTANTS: c_task_wb type TRFUNCTION value 'S'.
