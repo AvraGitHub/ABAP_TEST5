@@ -1,3 +1,4 @@
-*TEST DTEL NAME
+FIELDNAME:UNAME                           DATA ELEMENT:UNAME                           DATA TYPE:CHAR  DOMAIN:UNAME
+FIELDNAME:OBJECTNAME                      DATA ELEMENT:TABNAME                         DATA TYPE:CHAR  DOMAIN:AS4TAB
 FIELDNAME:E071K                           DATA ELEMENT:E071K                           DATA TYPE:STRU  DOMAIN:
 FIELDNAME:VALUES                          DATA ELEMENT:CHAR2048                        DATA TYPE:CHAR  DOMAIN:CHAR2048
