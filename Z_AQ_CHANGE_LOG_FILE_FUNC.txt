@@ -632,7 +632,7 @@ FUNCTION Z_AQ_CHANGE_LOG_FILE.
 
 
 *begin: write the program to the file
-    move 'C:\Users\EDLUNDA\Documents\SAP Programs\ABAP.txt' to filename.
+    move 'C:\Users\EDLUNDA\Documents\GitHub\https---github.com-AvraGitHub-GithubAPI\GithubAPI\SAP_FILES\ABAP.txt' to filename.
     CALL METHOD cl_gui_frontend_services=>gui_download
       EXPORTING
         filename          = filename
@@ -644,20 +644,20 @@ FUNCTION Z_AQ_CHANGE_LOG_FILE.
         OTHERS            = 1.
 *end: write the program to the file
 *begin: write the program to the file
-    move 'C:\Users\EDLUNDA\Documents\SAP Tables\TABLES.txt' to filename.
-*ADD ABAP ALSO TO THE TABLES FILE SO THERE IS JUST ONE FILE
-    append LINES OF ls_work_user-lt_abap to lt_table.
-
-    CALL METHOD cl_gui_frontend_services=>gui_download
-      EXPORTING
-        filename          = filename
-*       confirm_overwrite = 'X'
-*       no_auth_check     = 'X'
-      CHANGING
-        data_tab          = lt_table
-      EXCEPTIONS
-        OTHERS            = 1.
-*end: write the program to the file
+*    move 'C:\Users\EDLUNDA\Documents\SAP Tables\TABLES.txt' to filename.
+**ADD ABAP ALSO TO THE TABLES FILE SO THERE IS JUST ONE FILE
+*    append LINES OF ls_work_user-lt_abap to lt_table.
+*
+*    CALL METHOD cl_gui_frontend_services=>gui_download
+*      EXPORTING
+*        filename          = filename
+**       confirm_overwrite = 'X'
+**       no_auth_check     = 'X'
+*      CHANGING
+*        data_tab          = lt_table
+*      EXCEPTIONS
+*        OTHERS            = 1.
+**end: write the program to the file
 
 *********************************************************
 * Customising
@@ -832,15 +832,15 @@ FUNCTION Z_AQ_CHANGE_LOG_FILE.
 
 
 *begin: write the config file
-    move 'C:\Users\EDLUNDA\Documents\SAP Config\CONFIG.txt' to filename.
+    move 'C:\Users\EDLUNDA\Documents\GitHub\https---github.com-AvraGitHub-GithubAPI\GithubAPI\CONFIG\CONFIG.txt' to filename.
 **ADD ABAP ALSO TO THE TABLES FILE SO THERE IS JUST ONE FILE
 *              append LINES OF ls_work_user-lt_abap to lt_table.
 
     CALL METHOD cl_gui_frontend_services=>gui_download
       EXPORTING
         filename          = filename
-*       confirm_overwrite = 'X'
-*       no_auth_check     = 'X'
+       confirm_overwrite = 'X'
+       no_auth_check     = 'X'
       CHANGING
         data_tab          = t_config_fileout
       EXCEPTIONS
@@ -1099,6 +1099,31 @@ FUNCTION Z_AQ_CHANGE_LOG_FILE.
 *
 *
 *  write: /.
+CALL METHOD CL_GUI_FRONTEND_SERVICES=>EXECUTE
+   EXPORTING
+    DOCUMENT               = 'C:\Users\EDLUNDA\Documents\AQ web\main.bat'
+*    APPLICATION            =
+*    PARAMETER              =
+*    DEFAULT_DIRECTORY      =
+*    MAXIMIZED              =
+*    MINIMIZED              =
+*    SYNCHRONOUS            =
+*    OPERATION              = 'OPEN'
+  EXCEPTIONS
+    CNTL_ERROR             = 1
+    ERROR_NO_GUI           = 2
+    BAD_PARAMETER          = 3
+    FILE_NOT_FOUND         = 4
+    PATH_NOT_FOUND         = 5
+    FILE_EXTENSION_UNKNOWN = 6
+    ERROR_EXECUTE_FAILED   = 7
+    SYNCHRONOUS_FAILED     = 8
+    NOT_SUPPORTED_BY_GUI   = 9
+    others                 = 10
+        .
+IF SY-SUBRC <> 0.
+* Implement suitable error handling here
+ENDIF.
 
 
 ENDFUNCTION.
