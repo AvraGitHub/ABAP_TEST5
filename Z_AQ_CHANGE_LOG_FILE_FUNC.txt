@@ -839,8 +839,8 @@ FUNCTION Z_AQ_CHANGE_LOG_FILE.
     CALL METHOD cl_gui_frontend_services=>gui_download
       EXPORTING
         filename          = filename
-       confirm_overwrite = 'X'
-       no_auth_check     = 'X'
+*       confirm_overwrite = 'X'
+*       no_auth_check     = 'X'
       CHANGING
         data_tab          = t_config_fileout
       EXCEPTIONS
