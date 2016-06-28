@@ -1,0 +1,4 @@
+FIELDNAME:MANDT                           DATA ELEMENT:MANDT                           DATA TYPE:CLNT  DOMAIN:MANDT
+FIELDNAME:EMPID                           DATA ELEMENT:ZRNEMPID                        DATA TYPE:CHAR  DOMAIN:ZRNEMPID
+FIELDNAME:SALARY                          DATA ELEMENT:ZRNSALARY                       DATA TYPE:CURR  DOMAIN:ZRNSALARY
+FIELDNAME:WAERS                           DATA ELEMENT:ZRNWAERS                        DATA TYPE:CUKY  DOMAIN:ZRNWAERS
