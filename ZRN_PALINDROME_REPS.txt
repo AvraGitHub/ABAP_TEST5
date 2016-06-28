@@ -1,0 +1,71 @@
+*&---------------------------------------------------------------------*
+*& Report  ZRN_PALINDROME
+*&
+*&---------------------------------------------------------------------*
+*&
+*&
+*&---------------------------------------------------------------------*
+
+REPORT  zrn_palindrome.
+DATA: var1 TYPE string ,
+ var2 TYPE i ,
+ l_first TYPE i,
+ l_flag TYPE c,
+ l_last TYPE i.
+
+var1 = 'MADAM'.
+var2 = strlen( var1 ).
+
+l_first = 0.
+l_last = var2.
+
+DO var2 TIMES.
+
+  IF var1+l_first(1) <> var1+l_last(1).
+    l_flag = 'X' .
+  ELSE.
+    l_first = l_first + 1.
+    l_last = l_last - 1.
+  ENDIF .
+ENDDO.
+IF l_flag = 'X'.
+  WRITE : var1 , ' is not a palindrome' .
+ELSE.
+  WRITE : var1 , ' is a palindrome '  .
+ENDIF.
+
+
+*
+*DATA:l_str TYPE string VALUE 'HARIKA',
+*     l_len TYPE i,
+*     l_index TYPE i,
+*     l_rindex TYPE i,
+*     l_flag TYPE c.
+*
+*l_len = strlen( l_str ).
+*l_rindex = l_len.
+*CLEAR l_flag.
+*l_index = 0.
+*l_len = l_len / 2 .
+*write l_len .
+*DO l_len TIMES.
+**  l_index = sy-index.
+*
+*  l_rindex = l_rindex - 1.
+*  IF l_str+l_index(1) <> l_str+l_rindex(1).
+*    l_flag = 'X'.
+*    EXIT.
+*  ENDIF.
+*   l_index = l_index + 1.
+*ENDDO.
+*IF l_flag <> 'X'.
+*  WRITE:/ 'Palandrome'.
+*ELSE.
+*  WRITE:/ 'Not a Palindrome'.
+*ENDIF.
+**write / var1+0(1).
+**write / var1+1(1).
+**write / var1+2(1).
+**write / var1+3(1).
+**write / var1+4(1).
+**"write / var1+5(1).
