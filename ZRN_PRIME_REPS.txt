@@ -1,0 +1,55 @@
+*&---------------------------------------------------------------------*
+*& Report  ZRN_PRIME
+*&
+*&---------------------------------------------------------------------*
+*&
+*&
+*&---------------------------------------------------------------------*
+
+REPORT  zrn_prime.
+DATA : v_index TYPE syst-index ,
+      v_index2 TYPE syst-index ,
+      v_cnt TYPE i.
+DO 100 TIMES.
+  v_index = syst-index.
+  clear v_cnt.
+  DO v_index TIMES.
+    v_index2 = syst-index.
+    IF ( v_index MOD v_index2 ) = 0.
+      v_cnt = v_cnt + 1.
+    ENDIF.
+  ENDDO.
+  IF v_cnt LE 2.
+    WRITE: v_index.
+  ENDIF.
+ENDDO.
+
+
+
+*DATA a TYPE i.
+*DATA b TYPE i.
+*DATA c TYPE i.
+*DATA d TYPE i.
+*DATA e TYPE i.
+*DATA f TYPE i.
+*DATA g TYPE i.
+*DATA h TYPE i.
+*DATA i TYPE i.
+*a = 1.
+*WHILE a LE 99.
+*  a = a + 1.
+*  b = a MOD 2.
+*  c = a MOD 3.
+*  d = a MOD 4.
+*  e = a MOD 5.
+*  f = a MOD 6.
+*  g = a MOD 7.
+*  h = a MOD 8.
+*  i = a MOD 9.
+*
+*    IF b = 0 OR c = 0 OR d = 0 OR e = 0 OR f = 0 OR g = 0 OR h = 0 OR i = 0 AND a NE b AND a NE c AND a NE d AND a NE d AND a NE e AND a NE f AND a NE g AND a NE h AND a NE i.
+*ELSE.
+*      WRITE : a.
+*
+*  ENDIF.
+*ENDWHILE.
