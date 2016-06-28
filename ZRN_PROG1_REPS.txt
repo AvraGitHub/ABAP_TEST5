@@ -1,0 +1,31 @@
+*&---------------------------------------------------------------------*
+*& Report  ZRN_PROG1
+*&
+*&---------------------------------------------------------------------*
+*&
+*&
+*&---------------------------------------------------------------------*
+
+REPORT  zrn_prog1.
+TYPES : BEGIN OF gy_emp ,
+      id TYPE zrn_emp-empid ,
+      fname TYPE zrn_emp-firstname,
+      lname TYPE zrn_emp-lastname,
+      END OF gy_emp.
+
+DATA gs_emp TYPE gy_emp.
+
+SELECT SINGLE empid
+              firstname
+              lastname
+ FROM zrn_emp
+ INTO gs_emp.
+
+write : gs_emp-id,gs_emp-fname, gs_emp-lname .
+
+
+
+
+*data ws_zrn_emp type zrn_emp.
+*select single * from zrn_emp into ws_zrn_emp.
+* write : WS_ZRN_EMP-EMPID , WS_ZRN_EMP-firstname .
