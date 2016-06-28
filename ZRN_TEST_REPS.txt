@@ -1,0 +1,67 @@
+*&---------------------------------------------------------------------*
+*& Report  ZRN_TEST
+*&
+*&---------------------------------------------------------------------*
+*&
+*&
+*&---------------------------------------------------------------------*
+
+REPORT  zrn_test.
+
+"Declartions
+
+**DO-ENDDO / WHILE-ENDWHILE
+*DATA lv_count TYPE i VALUE '20'.
+*DATA lv_index TYPE i.
+*
+*WHILE syst-index LE lv_count.
+*  WRITE:/ syst-index.
+*ENDWHILE.
+
+*DO.
+*  WRITE:/ syst-index.
+*  IF syst-index = lv_count.
+*    EXIT.
+*  ENDIF.
+*ENDDO.
+
+*DO lv_count TIMES.
+*  lv_index = lv_index + 1.
+*  WRITE:/ lv_index.
+*ENDDO.
+
+
+*IF ELSE
+*DATA: lv_par1 TYPE i,
+*      lv_par2 TYPE i.
+*
+*lv_par1 = 10.
+*lv_par2 = 5.
+*
+*IF lv_par1 GE lv_par2.
+*  WRITE: lv_par1, 'is Greater than', lv_par2.
+*ELSE.
+*  WRITE: lv_par2, 'is Greater than', lv_par1.
+*ENDIF.
+
+* Add Program
+*DATA:var1(5) TYPE c,
+*     var2 TYPE c,
+*     var3 TYPE c LENGTH 5.
+
+
+*
+*
+*var1 = 12.
+*var2 = 3.
+*var3 = var1 + var2.
+*
+*WRITE:/ 'Sum of',var1,'and',var2,'=',var3.
+
+* Hello World Program
+
+"Output
+*WRITE 'HELLO WORLD'.
+*WRITE / 'WELCOME'.
+
+*WRITE: 'HELLO WORLD', / 'WELCOME'.
